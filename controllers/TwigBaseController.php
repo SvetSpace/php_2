@@ -4,7 +4,7 @@ require_once "BaseController.php"; // обязательно импортим Ba
 class TwigBaseController extends BaseController {
     public $title = ""; // название страницы
     public $template = ""; // шаблон страницы
-    //protected \Twig\Environment $twig; // ссылка на экземпляр twig, для рендернига
+    protected \Twig\Environment $twig; // ссылка на экземпляр twig, для рендернига
     
     // пишем конструктор, 
     // передаем в него один параметр
