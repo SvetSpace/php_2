@@ -3,6 +3,7 @@
 
 // подключаем пакеты которые установили через composer
 require_once '../vendor/autoload.php';
+require_once "../controllers/MainController.php"; // добавим ссылку на наш контроллер
 
 $loader = new \Twig\Loader\FilesystemLoader('../views');
 
@@ -15,6 +16,7 @@ $title = "";
 $template = "";
 
 $context = [];
+$controller = null; // создаем переменную под контроллер
 $menu = [
   [
     "title" => "Главная",
@@ -33,6 +35,7 @@ $menu = [
 if ($url == "/") {  
   $title = "Главная";
   $template = "main.twig";
+  $controller = new MainController($twig); // создаем экземпляр контроллера для главной страницы
 } elseif (preg_match("#^/vamp#", $url)) {
   $title = "Вампир";
   $template = "vamp__object.twig";
@@ -65,8 +68,7 @@ if ($url == "/") {
     $context['is_poem'] = true;
   }
 }
-
-$context['title'] = $title;
-$context['menu'] = $menu;
-
-echo $twig->render($template, $context);
+// проверяем если controller не пустой, то рендерим страницу
+if ($controller) {
+  $controller->get();
+}
