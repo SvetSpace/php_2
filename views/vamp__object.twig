@@ -1,0 +1,31 @@
+{% extends "__layout.twig" %}
+
+{% block content %}
+    <div>
+        {{title}} -- Любит кровь
+    </div>
+    <br>
+    <div class="block h" style="justify-content: center;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+        <div style="font-size: 3em; color: rgb(80, 1, 1);">Вампир</div>
+        <div style="font-size: 2em; color: rgb(80, 1, 1);">Ночной житель</div>
+    </div>
+    </div>
+    <br>
+    <div>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link {{ is_image ? "active" : '' }}" href="/vamp/image" aria-current="page">Картинка</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ is_info ? "active" : '' }}"  href="/vamp/info">Характеристика</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ is_poem ? "active" : '' }}" href="/vamp/poem">Стихотворение</a>
+            </li>
+          </ul>
+    </div>
+
+    {% block objectContent %}
+    {% endblock %}
+{% endblock %}

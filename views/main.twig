@@ -1,0 +1,31 @@
+{% extends "__layout.twig" %}
+
+{% block content %}
+
+<div class="block s text" style="text-align: center;">
+  На этом сайте Вы сможете узнать о мифических рассах,<br>
+  их характеристиках и приложенных к ним стихотворениям<br>
+  <br>
+  Добро пожаловать на нашу территорию!<br>
+  Погрузитесь в мир сверхъестественного!
+</div>
+
+
+<br>
+<div>
+<h class="btn btn-outline"></h>
+<a class="btn btn-outline-danger {{ url ? "active" : '' }}" href="/vamp">Вампир</a>
+<a class="btn btn-outline-warning {{ is_image ? "active" : '' }}" href="/vamp/image">Картинка</a>
+<a class="btn btn-outline-warning {{ is_info ? "active" : '' }}" href="/vamp/info">Характеристика</a>
+<a class="btn btn-outline-warning {{ is_poem ? "active" : '' }}" href="/vamp/poem">Стихотворение</a>
+</div>
+<br>
+<div>
+<h class="btn btn-outline"></h>
+<a class="btn btn-outline-danger {{ url ? "active" : '' }}" href="/werewolf">Оборотень</a>
+<a class="btn btn-outline-warning {{ is_image ? "active" : '' }}" href="/werewolf/image">Картинка</a>
+<a class="btn btn-outline-warning {{ is_info ? "active" : '' }}" href="/werewolf/info">Характеристика</a>
+<a class="btn btn-outline-warning {{ is_poem ? "active" : '' }}" href="/werewolf/poem">Стихотворение</a>
+</div>
+
+{% endblock %}

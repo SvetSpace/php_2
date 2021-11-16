@@ -1,0 +1,150 @@
+.main-image-wrapper {
+    width: 350px;
+    height: 350px;            
+    border: 1px solid rgb(83, 2, 2);
+    margin: 32px;
+    box-shadow: 0 0 16px rgb(85, 60, 60);
+    border-radius: 50%;
+    overflow: hidden;   
+    transition: 1.5s;     
+    flex-grow: auto; 
+    flex-basis: auto;
+    max-width: 90%;     
+}
+.main-image-wrapper:hover {
+    cursor: none;
+    box-shadow: 0 0 30px rgb(153, 45, 45);
+    transform: scale(1.1);
+}
+.main-image {
+    height: 100%;
+}
+.text {
+    color: rgb(80, 1, 1);
+    font: 2em Old Classic;
+}
+.s {
+    margin: 32px;
+    text-align: center;
+    line-height: 1;
+    font-weight: bold;
+
+    flex-basis: 0; 
+    flex-grow: 1; 
+    justify-content: center; 
+    align-items: center;
+}
+.h {
+    color: rgb(80, 1, 1);
+    font-family: Old Classic;
+    font-weight: bold;
+    flex-grow: 1; 
+    flex-basis: 0;
+}
+.block {
+    background-color: rgba(255, 169, 169, 0.3);
+    flex-grow: 0; 
+    flex-basis: auto;
+    margin: 0.3em;
+    padding: 1em;
+    border-radius: 70px;
+}
+.column {
+    flex-direction: column;
+    margin: 0em;
+    padding: 0.5em;
+    flex-grow: 0;
+    flex-basis: auto;
+}
+
+[class^=col] { 
+    padding-top: .95rem;
+    padding-bottom: .0rem;            
+    flex-grow: 0;
+    flex-basis: auto;
+}
+[class^=nav] {
+    color:rgb(236, 163, 163);          
+    flex-grow: 0;
+    flex-basis: auto;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show>nav.link {
+    background-color: rgb(80, 1, 1);
+    color: rgb(236, 163, 163); 
+}
+.nav-link:focus,
+.nav-link:hover {
+    color: #eca3a3;
+}
+
+
+[class^=list-group] {
+    color:rgb(236, 163, 163);          
+    flex-grow: 0;
+    flex-basis: auto;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        border-radius: 15rem;
+}
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: .15rem 1rem;
+    background-color: rgb(204, 70, 70);
+    border: 1px solid rgba(0,0,0,.125);
+}
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: .5rem 1rem;
+    color: #ff0404;
+    text-decoration: none;
+    background-color: rgb(14, 7, 7);
+    border: 1px solid rgba(255, 0, 0, 0.125);
+}
+
+.btn-outline-danger {
+    background-color: rgb(80, 1, 1, 0.5);
+    color: #331417;
+    border-color: rgb(80, 1, 1, 0.5);
+}
+.btn-outline-secondary {
+    color: #23303c;
+    border-color: #23303c;
+}
+
+.fab {
+    color: #e66f7b;
+}
+.navbar{
+    background-color: rgba(163, 156, 156, 0.3);
+}
+
+a {
+    color: rgb(255, 163, 163); /* Цвет ссылок */
+   }
+a:visited {
+    color: rgba(255, 0, 0, 0.125); /* Цвет посещенных ссылок */
+   }
+a:active {
+    color: #343A40; /* Цвет активных ссылок */
+   }
+a:hover {
+    color: rgba(255, 0, 0, 0.5);
+}
+
+  body {background: url('https://photocentra.ru/images/main54/546160_main.jpg'); 
+        min-height: 100%;
+        background-size: cover;
+        background-attachment: fixed;    
+        background-position: start start;
+    }
+    ::selection {background: rgb(100, 3, 3); color:rgb(236, 163, 163);}        
+    ::-moz-selection {background: rgb(100, 3, 3); color:rgb(236, 163, 163);}
+    ::-webkit-selection {background: rgb(100, 3, 3); color:rgb(236, 163, 163);}
+    * {color: rgb(236, 163, 163);}
