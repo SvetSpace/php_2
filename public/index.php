@@ -6,6 +6,12 @@ require_once '../vendor/autoload.php';
 require_once "../controllers/MainController.php"; // добавим ссылку на наш контроллер
 require_once "../controllers/VampController.php";
 require_once "../controllers/VampImageController.php";
+require_once "../controllers/VampInfoController.php";
+require_once "../controllers/VampPoemController.php";
+require_once "../controllers/WerewolfImageController.php";
+require_once "../controllers/WerewolfInfoController.php";
+require_once "../controllers/WerewolfPoemController.php";
+require_once "../controllers/Controller404.php";
 
 $loader = new \Twig\Loader\FilesystemLoader('../views');
 
@@ -18,7 +24,7 @@ $title = "";
 $template = "";
 
 $context = [];
-$controller = null; // создаем переменную под контроллер
+$controller = new Controller404($twig); // создаем переменную под контроллер (404 по умолчанию)
 $menu = [
   [
     "title" => "Главная",
