@@ -4,7 +4,7 @@
 // подключаем пакеты которые установили через composer
 require_once '../vendor/autoload.php';
 require_once "../controllers/MainController.php"; // добавим ссылку на наш контроллер
-require_once "../controllers/VampController.php"; // не забываем добавить импорт
+require_once "../controllers/VampController.php";
 
 $loader = new \Twig\Loader\FilesystemLoader('../views');
 
@@ -40,9 +40,6 @@ if ($url == "/") {
 } elseif (preg_match("#^/vamp#", $url)) {
 
   $controller = new VampController($twig); // просто создаем контроллер
-  $title = "Вампир";
-  $template = "vamp__object.twig";
-    
 
   if (preg_match("#^/vamp/image#", $url)) {
     $template = "vamp_image.twig";
