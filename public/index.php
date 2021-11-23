@@ -35,24 +35,16 @@ $menu = [
 ];
 
 if ($url == "/") {  
-  $title = "Главная";
-  $template = "main.twig";
   $controller = new MainController($twig); // создаем экземпляр контроллера для главной страницы
-} elseif (preg_match("#^/vamp#", $url)) {
 
-  $controller = new VampController($twig); // просто создаем контроллер
-
-  if (preg_match("#^/vamp/image#", $url)) {
-
+  }elseif (preg_match("#^/vamp/image#", $url)) {
     $controller = new VampImageController($twig);
-    
-  } elseif (preg_match("#^/vamp/info#", $url)) {
-    $template = "vamp_info.twig";
-    $context['is_info'] = true;
-  } elseif (preg_match("#^/vamp/poem#", $url)) {
-    $template = "vamp_poem.twig";
-    $context['is_poem'] = true;
-  }
+  } elseif (preg_match("#^/vamp/info#", $url)) {    
+    $controller = new VampInfoController($twig);
+  } elseif (preg_match("#^/vamp/poem#", $url)) {    
+    $controller = new VampPoemController($twig);    
+  }elseif (preg_match("#^/vamp#", $url)) {
+    $controller = new VampController($twig);
 
 } elseif (preg_match("#^/werewolf#", $url)) {  
   $title = "Оборотень";
