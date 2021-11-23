@@ -8,8 +8,6 @@ class VampImageController extends VampController {
     {
         $context = parent::getContext();
 
-        $context['is_image'] = $context['url'] == "/vamp/image";
-        $context['url_image'] = "/vamp/image";
         $context['image'] = "/images/vamp.jpg";
         $context['is_image'] = true;
 
