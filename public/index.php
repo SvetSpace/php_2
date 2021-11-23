@@ -43,24 +43,17 @@ if ($url == "/") {
     $controller = new VampInfoController($twig);
   } elseif (preg_match("#^/vamp/poem#", $url)) {    
     $controller = new VampPoemController($twig);    
-  }elseif (preg_match("#^/vamp#", $url)) {
+  } elseif (preg_match("#^/vamp#", $url)) {
     $controller = new VampController($twig);
 
-} elseif (preg_match("#^/werewolf#", $url)) {  
-  $title = "Оборотень";
-  $template = "werewolf__object.twig";
-
-  if (preg_match("#^/werewolf/image#", $url)) {
-    $template = "werewolf_image.twig";
-    $context['image'] = "/images/werewolf.jpg";
-    $context['is_image'] = true;
+  } elseif (preg_match("#^/werewolf/image#", $url)) {
+    $controller = new WerewolfImageController($twig);
   } elseif (preg_match("#^/werewolf/info#", $url)) {
-    $template = "werewolf_info.twig";
-    $context['is_info'] = true;
+    $controller = new WerewolfInfoController($twig);
   } elseif (preg_match("#^/werewolf/poem#", $url)) {
-    $template = "werewolf_poem.twig";
-    $context['is_poem'] = true;
-  }
+    $controller = new WerewolfPoemController($twig);    
+  } elseif (preg_match("#^/werewolf#", $url)) {  
+  $controller = new WerewolfController($twig);
 }
 // проверяем если controller не пустой, то рендерим страницу
 if ($controller) {
