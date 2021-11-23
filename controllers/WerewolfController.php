@@ -9,9 +9,6 @@ class WerewolfController extends TwigBaseController {
     {
         $context = parent::getContext();
 
-        $context['is_image'] = $context['url'] == "/werewolf/image";
-        $context['is_info'] = $context['url'] == "/werewolf/info";
-        $context['is_poem'] = $context['url'] == "/werewolf/poem";
         $context['url_image'] = "/werewolf/image";
         $context['url_info'] = "/werewolf/info";
         $context['url_poem'] = "/werewolf/poem";
