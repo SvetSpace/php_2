@@ -5,6 +5,7 @@
 require_once '../vendor/autoload.php';
 require_once "../controllers/MainController.php"; // добавим ссылку на наш контроллер
 require_once "../controllers/VampController.php";
+require_once "../controllers/VampImageController.php";
 
 $loader = new \Twig\Loader\FilesystemLoader('../views');
 
@@ -42,9 +43,9 @@ if ($url == "/") {
   $controller = new VampController($twig); // просто создаем контроллер
 
   if (preg_match("#^/vamp/image#", $url)) {
-    $template = "vamp_image.twig";
-    $context['image'] = "/images/vamp.jpg";
-    $context['is_image'] = true;
+
+    $controller = new VampImageController($twig);
+    
   } elseif (preg_match("#^/vamp/info#", $url)) {
     $template = "vamp_info.twig";
     $context['is_info'] = true;
